@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  'poppins',sans-serif; 
+}
+
+.head{
+    display: flex;
+    align-items: center;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-top:20px ;
+    margin: auto;
+    
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+}
+
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav ul li{
+    display: inline-block;
+    margin-right: 25px;
+    padding: 10px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-size: 23px;
+    color: #416163;
+}
+nav ul li a:hover{
+    color:#f17a7e;
+    transition:all 0.3s;
+    text-decoration: none;
+}
+nav ul li::after{
+    content:'';
+    width:0%;
+    height:1px;
+    background: #f17a7e;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+nav ul li:hover::after{
+        width: 75%;
+}
+
+
+p{
+    color: #555;
+   
+}
+
+ 
+
+
+/* // else{
+    //     $name=$_POST['name'];
+    //     $email=$_POST['email'];
+    //     $pass=$_POST['pass'];
+    //     $cpass=$_POST['cpass'];
+    //     $state=$_POST['state'];
+    //     $dob=$_POST['dob'];
+    //     $mobile=$_POST['mobile'];
+    //     $address=$_POST['address'];
+    //     $target_dir="img/";
+    //     $imgpath=$target_dir.basename($_FILES['file']['name']);
+    //     $moveimg=move_uploaded_file($_FILES['file']['tmp_name'],$imgpath);
+    // } */

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+    <link rel="stylesheet" href="../css/shop.css">
+    <link rel="stylesheet" href="../links/css/all.css">
+    <link rel="stylesheet" href="../links/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../links/bootstrap/js/bootstrap.min.js">
+</head>
+
+<body>
+    <!-- logo and navigation -->
+    <?php
+        include "nav.php";
+    ?>
+    <!--    header -->
+    <section class="cart p-5">
+        <div class="container text-left">
+            <div class="row p-3 header">
+                <div class="col-lg-8">
+                    <span>Product</span>
+                </div>
+                <div class="col-lg-2">
+                    <span>Quntity</span>
+                </div>
+                <div class="col-lg-2">
+                    <span>SubTotal</span>
+                </div>
+            </div>
+        
+            <div class="row p-2">
+                <div class="col-lg-2">
+                    <img src="img/i2.jpg" width="100px" height="100px">
+                </div>
+                <div class="col-lg-6" style="color:#416163;">
+                    <h5>White printd Shirt</h5>
+                    <p>Price : Rs.300</p>
+                    <p style="color: #f17a7e;;">REMOVE</p>
+                </div>
+                <div class="col-lg-2 p-3">
+                    <input type="number" value="1">
+                </div>
+                <div class="col-lg-2 p-3">
+                    <span>Rs.300</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-2">
+                    <img src="img/i5.jpg" width="100px" height="100px">
+                </div>
+                <div class="col-lg-6" style="color: #416163;">
+                    <h5>White printd Shirt</h5>
+                    <p>Price : Rs.300</p>
+                    <p style="color:#f17a7e;">REMOVE</p>
+                </div>
+                <div class="col-lg-2 p-3">
+                    <input type="number" value="1">
+                </div>
+                <div class="col-lg-2 p-3">
+                    <span>Rs.300</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-2" >
+                    <img src="img/i1.jpg" width="100px" height="100px">
+                </div>
+                <div class="col-lg-6" style="color:#416163;">
+                    <h5>White printd Shirt</h5>
+                    <p>Price : Rs.300</p>
+                    <p style="color:#f17a7e;">REMOVE</p>
+                </div>
+                <div class="col-lg-2 p-3">
+                    <input type="number" value="1">
+                </div>
+                <div class="col-lg-2 p-3">
+                    <span>Rs.300</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6"> </div>
+                <div class="col-lg-6">
+                    <hr style="width: 100%;background-color:  black;">
+                </div>
+            </div>
+            <div class="total">
+            <div class="row text-center">
+                <div class="col-lg-6"> </div>
+                <div class="col-lg-3">
+                    <span>SubTotal </span>
+                </div>
+                <div class="col-lg-3">
+                    <span>Rs.900</span>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-lg-6"> </div>
+                <div class="col-lg-3">
+                    <!-- <span>Tax </span> -->
+                </div>
+                <div class="col-lg-3">
+                    <span>Rs.35</span>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-lg-6"> </div>
+                <div class="col-lg-3">
+                    <span>Total </span>
+                </div>
+                <div class="col-lg-3">
+                    <span>Rs.935</span>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section>
+</body>
+
+</html>

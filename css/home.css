@@ -1,0 +1,235 @@
+/* new arrivals */
+
+.newarrival {
+    text-align: center;
+    margin: 6% 0px;
+    font-size: 20px;
+    color: #416163;
+}
+
+.newarrival p{
+    font-size: 17.5px;
+}
+.row2{
+    display:flex;
+    margin-top:3%;
+   
+}
+.col3 img{
+    width:450px;
+    height:500px;
+    object-fit: cover;
+    padding:5%;
+    margin-left:20%;
+}
+.row3{
+    display:flex;
+}
+.col4 p{
+    /* border:1px solid black; */
+    width:450px;
+    text-align:center;
+    padding:5%;
+    margin-left:20%;
+    font-size:20px;
+    color:#416163;
+}
+
+/* welcome to store */
+.wlcmstore {
+    text-align: center;
+    margin: 6% 0px;
+    font-size: 20px;
+}
+.wlcmstore h1{
+    color:#416163;
+}
+.wlcmstore p{
+    font-size: 16px;
+}
+.shop hr{
+    margin-left: 45.5%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 9%;
+    height: 2px;
+    background-color:#f17a7e;
+    color:#f17a7e;
+}
+.row4{
+    display:flex;
+    margin-top:3%;
+   
+}
+.col5 p{
+    width:450px;
+    text-align:center;
+    padding:5%;
+    margin-left:20%;
+    font-size:13px;
+}
+p big{
+    color:#416163;
+    font-weight: bold;
+}
+.col3 i{
+    padding:5%;
+    margin-left:20%;
+    width:450px;
+    height:auto;
+    font-size:xx-large;
+    color:#f17a7e;
+}
+/*-------------------------------------------- SHOP */
+/* product header */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  'poppins',sans-serif; 
+}
+
+.headtext h1{
+    padding-top: 20%;
+    font-weight: lighter;
+    font-size:70px;
+    color:white;
+    text-align:left;
+    box-sizing: border-box;
+}
+/* product pictures */
+.bestselling{
+    height: 1000px;
+    width: 100%;
+    padding: 70px 0px 50px;
+}
+.bestselling h2{
+    font-size: 20px;
+    font-weight: bold;
+}
+.bestselling h1{
+    font-size:45;
+  color: #416163;
+}
+.card{
+    margin-top:40px;
+}
+
+.products h2{
+    font-size: 20px;
+    font-weight: bold;
+}
+.products img{
+    margin: 30px;
+}
+.products h1{
+    font-size:45;
+  color: #416163;
+}
+.traditional h2{
+    font-size: 20px;
+    font-weight: bold;
+}
+.traditional h1{
+    font-size:45;
+  color: #416163;
+}
+.traditional{
+    height: 570px;
+    width: 100%;
+    padding: 70px 0px 50px;
+}
+/* ----------------------------------- */
+.product_item_pic{
+    height: 360px;
+    position: relative;
+    overflow: hidden;
+}
+.product_item_pic .label{
+    position: absolute;
+    font-size: 16px;
+    color: #fff;
+    background-color: #416163;
+    font-weight: 500;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 2% 3%;
+    left: 1%;
+    top: 1%;
+}
+
+
+/* ////////////////////////////----------    ABOUT    ---------------                        */
+
+.team1 h2{
+    font-size: 45px;
+    font-weight: bold;
+}
+.team h2{
+    font-size: 45px;
+    font-weight: bold;
+}
+.team p{
+    font-size: 23px;
+    color:cornflowerblue;
+}
+.team1 p{
+    font-size: 23px;
+    color:cornflowerblue;
+}
+
+/* ////////////////////////////----------    ORDER    ---------------                        */
+.related h2{
+    font-size: 20px;
+    font-weight: bold;
+}
+.related{
+    height: 570px;
+    width: 100%;
+    padding: 70px 0px 50px;
+}
+.related h1{
+    font-size: 30px;
+    margin-bottom:10px;
+}
+.related h5 a{
+    color: black;
+}
+.related #btn{
+    border-radius: 20px 20px;
+    background-color: black;
+    color: white;
+    padding: 3px 30px;
+}
+.related input{
+    width: 90px;
+    margin-right: 20px;
+}
+/* ////////////////////////////----------    CART    ---------------                        */
+.header{
+    background-color: #416163;
+    color: white;
+}
+.cart span{
+    font-size: 20px;
+};
+
+.cart{
+    height: 700px;
+    width: 100%;
+    padding: 70px 0px 50px;
+}
+.cart h1{
+    font-size: 30px;
+    margin-bottom:10px;
+}
+.cart input{
+    width: 40px;
+    margin-right: 40px;
+    text-align: center;
+}
+.total{
+    color:#416163;
+    font-size: 25px;
+}
