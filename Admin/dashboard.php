@@ -28,7 +28,6 @@ $qrychk = mysqli_query($conn, $qry);
                         <th>IMAGE</th>
                         <th>Update</th>
                         <th>Delete</th>
-                        <th>View</th>
                     </tr>
                     <?php
                     while ($row = mysqli_fetch_assoc($qrychk)) {
@@ -44,7 +43,6 @@ $qrychk = mysqli_query($conn, $qry);
                             <td><img src="<?php echo $row['image']; ?>" alt="" width="100px"></td>
                             <td style="color:green;"><i class="fas fa-pen"></i></td>
                             <td class="text-danger"><i class="fas fa-trash"></i></td>
-                            <td style="color:blue;"><i class="fas fa-eye"></i></td>
                         </tr>
                     <?php } ?>
                 </table>

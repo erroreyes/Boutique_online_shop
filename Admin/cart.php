@@ -1,17 +1,4 @@
-<?php
-session_start();
-if (isset($_POST['remove_item'])) {
-    foreach ($_SESSION['cart'] as $key => $value) {
-        print_r($key);
-        // if ($value['proname'] == $_POST['proname']) {
-            unset($_SESSION['cart'][$key]);
-            $_SESSION['cart'] = array_values($_SESSION['cart']);
-            echo "<script>alert('item removed');
-            window.location.href='cart.php';</script>";
-        // }
-    }
-}
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,34 +19,57 @@ if (isset($_POST['remove_item'])) {
     include "nav.php";
     ?>
     <div class="container">
-        <table class="table">
+        <table class="table text-center">
             <form method="POST">
-                <tr>
-                    <th>srno</th>
+                <tr class=" alert-info" style="font-weight:bolder;">
                     <th>product name</th>
                     <th>price</th>
                     <th>quantity</th>
-                    <th>Total</th>
+                    <th>DELETE</th>
+                    <th class="text-center" colspan="4">
+                        <h5>Total</h5>
+                    </th>
+
                 </tr>
 
                 <tr>
                     <?php
+                    // remove
+                    if (isset($_POST['remove'])) {
+                        foreach ($_SESSION['cart'] as $key => $value) {
+                            if ($value['proname'] === $_POST['item']) {
+                                unset($_SESSION['cart'][$key]);
+                                $_SESSION['cart'] = array_values($_SESSION['cart']);
+                                header("location:cart.php");
+                            }
+                            
+                        }
+                    }
+                    
+                    $ptotal = 0;
                     $total = 0;
                     if (isset($_SESSION['cart'])) {
                         foreach ($_SESSION['cart'] as $key => $value) {
-                            $total = $total + $value['price'];
-                            echo "<tr>
-                        <td name='proname'>$value[proname]</td>
-                        <td>$value[price]</td>
-                        <td><input type='number' class='text-center' value='$value[quantity]' min='1' max='10'></td>
-                        <td><button class='btn btn-danger' name='remove_item'>REMOVE</button></td>
-                        <td>$total</td>
-                    </tr>";
+                            $total = $value['price'] * $value['quantity'];
+                            // $total += $value['price'] * $value['quantity'];
+                            // $ptotal = $value['price'] * $value['quantity'];
+                            echo "
+                            <tr>
+                            <form method='POST'>
+                                    <td> <input type='hidden' name='name' value='$value[proname]'>$value[proname]</td>
+                                    <td> <input type='hidden' name='name' value='$value[price]'>$value[price]</td>
+                                    <td> <input type='' name='name' value='$value[quantity]'></td>
+                                    <td><button class='btn btn-danger' name='remove'>REMOVE</button></td>
+                                    <td><input type='hidden' name='item' value='$value[proname]'></td>
+                                    <td class='text-left'>$total</td>
+                                </form>
+                                </tr>
+                                ";
                         }
                     }
                     ?>
-
                 </tr>
+
             </form>
         </table>
     </div>

@@ -1,26 +1,4 @@
-<?php
-session_start();
-if (isset($_POST["add_to_cart"])) {
-    if (isset($_SESSION['cart'])) {
-        $myitem = array_column($_SESSION['cart'], 'proname');
-        if (in_array($_POST['proname'], $myitem)) {
-            echo "<script>alert('item added');
-                    window.location.href='cart.php';</script>";
-        } else {
-            $count = count($_SESSION['cart']);
-            $_SESSION['cart'][$count] = array('proname' => $_POST['proname'], 'price' => $_POST['price'], 'quantity' => 1);
-            echo "<script>alert('item added');
-                    window.location.href='cart.php';</script>";
-        }
-    } else {
-        $_SESSION['cart'][0] = array('proname' => $_POST['proname'], 'price' => $_POST['price'], 'quantity' => 1);
-        print_r($_SESSION['cart']);
-    }
-}
-
-
-?>
-
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -179,7 +157,7 @@ if (isset($_POST["add_to_cart"])) {
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto">
-                        <form method="POST">
+                        <form action="insert_cart.php" method="POST">
                             <div class="card border-0">
                                 <img src="../img/w6.webp" class="card-img img-fluid">
                                 <div class="label new">New</div>
@@ -191,21 +169,21 @@ if (isset($_POST["add_to_cart"])) {
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
-                                                <!-- <i class="fa-regular fa-star"></i> -->
-                                                <!-- <i class="fa-regular fa-star"></i> -->
                                             </div>
                                             <div class="product_price">Rs.300</div>
                                         </div>
-                                        <button class="btn w-100 mt-3" type="submit" name="add_to_cart">Add to cart</button>
-                                        <input type="hidden" name="proname" value="blazer">
+                                        <input type="hidden" name="proname" value="blazer1">
                                         <input type="hidden" name="price" value="300">
+                                        <input type="number" name="quantity" value="min='1' max='10'" placeholder="Quantity">
+                                        <button class="btn w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
+                                        
                                     </div>
                                 </a>
                             </div>
                         </form>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto">
-                        <form method="POST">
+                    <form action="insert_cart.php" method="POST">
                             <div class="card border-0">
                                 <img src="../img/w3.webp" class="card-img img-fluid">
                                 <div class="label new">New</div>
@@ -217,21 +195,22 @@ if (isset($_POST["add_to_cart"])) {
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
-                                                <!-- <i class="fa-regular fa-star"></i> -->
-                                                <!-- <i class="fa-regular fa-star"></i> -->
                                             </div>
                                             <div class="product_price">Rs.500</div>
                                         </div>
-                                        <button class="btn btn-info w-100 mt-3" type="submit" name="add_to_cart">Add to cart</button>
-                                        <input type="hidden" name="proname" value="blazer1">
+                                        <input type="hidden" name="proname" value="blazer2">
                                         <input type="hidden" name="price" value="500">
+                                        <input type="number" name="quantity" value="min='1' max='10'" placeholder="Quantity">
+                                        <button class="btn btn-info w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
+                                        
                                     </div>
                                 </a>
                             </div>
                         </form>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto">
-                        <form method="POST">
+                    <form action="insert_cart.php" method="POST">
+
                             <div class="card border-0">
                                 <img src="../img/w2.webp" class="card-img img-fluid">
                                 <div class="label new">New</div>
@@ -248,16 +227,17 @@ if (isset($_POST["add_to_cart"])) {
                                             </div>
                                             <div class="product_price">Rs.800</div>
                                         </div>
-                                        <button class="btn btn-info w-100 mt-3" type="submit" name="add_to_cart">Add to cart</button>
                                         <input type="hidden" name="proname" value="blazer3">
                                         <input type="hidden" name="price" value="800">
+                                        <input type="number" name="quantity" value="min='1' max='10'" placeholder="Quantity">
+                                        <button class="btn btn-info w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
                                     </div>
                                 </a>
                             </div>
                         </form>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto">
-                        <form method="POST">
+                    <form action="insert_cart.php" method="POST">
                             <div class="card border-0">
                                 <img src="../img/w1.webp" class="card-img img-fluid">
                                 <div class="label new">New</div>
@@ -274,9 +254,10 @@ if (isset($_POST["add_to_cart"])) {
                                             </div>
                                             <div class="product_price">Rs.400</div>
                                         </div>
-                                        <button class="btn btn-info w-100 mt-3" type="submit" name="add_to_cart">Add to cart</button>
                                         <input type="hidden" name="proname" value="blazer4">
                                         <input type="hidden" name="price" value="400">
+                                        <input type="number" name="quantity" value="min='1' max='10'" placeholder="Quantity">
+                                        <button class="btn btn-info w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
                                     </div>
                                 </a>
                             </div>

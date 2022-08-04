@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
                 state varchar(40),
                 dob date,
                 mobile bigint,
-                image text,
+                image longblob,
                 address varchar(255)
             )";
     }
