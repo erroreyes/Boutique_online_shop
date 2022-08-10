@@ -11,6 +11,17 @@
     <link rel="stylesheet" href="../links/css/all.css">
     <link rel="stylesheet" href="../links/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../links/bootstrap/js/bootstrap.min.js">
+    <style>
+        .bgimg {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+            background-image: url("../img/center.jpg");
+            background-attachment: fixed;
+            width: 100%;
+            height: 700px;
+            background-size: cover;
+            object-fit: cover;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,7 +30,18 @@
     include "nav.php";
     ?>
 
-    <section class="about p-5" style="background-color:#f8e7e0;height:230px">
+    <div class="bgimg">
+        <div class="container-fluid headtext p-5">
+            <head class="row">
+                <div class="col-lg-6 text-left p-5">
+                    <h1>About us</h1>
+                    <hr class="bg-white w-25" style="height:2px;margin-right:20%;">
+                    <div class="text-left" style="color:#fff;font-size:20px;">Lorem ipsum dolor sit amet consectetur consectetur adipisicing elit <br>dolor sit amet consectetur consectetur adipisicing elit.</div>
+                </div>
+            </head>
+        </div>
+    </div>
+    <!-- <section class="about p-5" style="background-color:#f8e7e0;height:230px">
         <div class="container-fluid text-center">
             <div class="row">
                 <div class="col-lg-12" style="color:#416163;font-size:50px;">About us</div>
@@ -28,7 +50,7 @@
                 <div class="col-lg-12" style="color:#416163;font-size:20px;">Lorem ipsum dolor sit amet consectetur consectetur adipisicing elit <br>dolor sit amet consectetur consectetur adipisicing elit.</div>
             </div>
         </div>
-    </section>
+    </section> -->
     <section class="container-fluid p-5 mt-5">
         <div class="row">
             <div class="col-lg-6 text-center">

@@ -36,8 +36,9 @@
                 <tr>
                     <?php
                     // remove
+                    
                     if (isset($_POST['remove'])) {
-                        foreach ($_SESSION['cart'] as $key => $value) {
+                            foreach ($_SESSION['cart'] as $key => $value) {
                             if ($value['proname'] === $_POST['item']) {
                                 unset($_SESSION['cart'][$key]);
                                 $_SESSION['cart'] = array_values($_SESSION['cart']);

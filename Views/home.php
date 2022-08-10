@@ -16,13 +16,15 @@ $qrychk = mysqli_query($conn, $qry);
     <link rel="stylesheet" href="../links/bootstrap/js/bootstrap.min.js">
     <!-- <link rel="stylesheet" href="x/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/regular.min.css" integrity="sha512-EbT6icebNlvxlD4ECiLvPOVBD0uQdt4pHRg8Gpkfirdu9W8l2rtRZO8rThjqeIK08ubcFeiFKHbek7y+lEbWIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <style>
-        <?php include "../css/home.css" ?>.bgimg {
+        <?php include "../css/home.css" ?>
+        .bgimg {
             background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-            background-image: url("../img/back1.jpg");
-            background-size: 100% 100%;
+            background-image: url("../img/sea.jpg");
             background-attachment: fixed;
             width: 100%;
             height: 700px;
+            background-size: cover;
+            object-fit: cover;
         }
 
         .card {
@@ -242,9 +244,10 @@ $qrychk = mysqli_query($conn, $qry);
                                             
                                             <div class="product_price">Rs.300</div>
                                         </div>
-                                        <button class="btn w-100 mt-3" type="submit" name="add_to_cart">Add to cart</button>
-                                        <input type="hidden" name="proname" value="blazer">
-                                        <input type="hidden" name="price" value="300">
+                                        <input type="hidden" name="proname" value="blazer2">
+                                        <input type="hidden" name="price" value="500">
+                                        <input type="number" name="quantity"  placeholder="Quantity">
+                                        <button class="btn btn-info w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
                                     </div>
                                 </a>
                             </div>
@@ -266,9 +269,10 @@ $qrychk = mysqli_query($conn, $qry);
                                             
                                             <div class="product_price">Rs.500</div>
                                         </div>
-                                        <button class="btn btn-info w-100 mt-3" type="submit" name="add_to_cart">Add to cart</button>
-                                        <input type="hidden" name="proname" value="blazer1">
+                                        <input type="hidden" name="proname" value="blazer2">
                                         <input type="hidden" name="price" value="500">
+                                        <input type="number" name="quantity"  placeholder="Quantity">
+                                        <button class="btn btn-info w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
                                     </div>
                                 </a>
                             </div>
@@ -286,9 +290,10 @@ $qrychk = mysqli_query($conn, $qry);
                                            
                                             <div class="product_price">Rs.800</div>
                                         </div>
-                                        <button class="btn btn-info w-100 mt-3" type="submit" name="add_to_cart">Add to cart</button>
-                                        <input type="hidden" name="proname" value="blazer3">
-                                        <input type="hidden" name="price" value="800">
+                                        <input type="hidden" name="proname" value="blazer2">
+                                        <input type="hidden" name="price" value="500">
+                                        <input type="number" name="quantity"  placeholder="Quantity">
+                                        <button class="btn btn-info w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
                                     </div>
                                 </a>
                             </div>
@@ -306,9 +311,10 @@ $qrychk = mysqli_query($conn, $qry);
                                             
                                             <div class="product_price">Rs.400</div>
                                         </div>
-                                        <button class="btn btn-info w-100 mt-3" type="submit" name="add_to_cart">Add to cart</button>
-                                        <input type="hidden" name="proname" value="blazer4">
-                                        <input type="hidden" name="price" value="400">
+                                        <input type="hidden" name="proname" value="blazer2">
+                                        <input type="hidden" name="price" value="500">
+                                        <input type="number" name="quantity"  placeholder="Quantity">
+                                        <button class="btn btn-info w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
                                     </div>
                                 </a>
                             </div>
@@ -391,13 +397,6 @@ $qrychk = mysqli_query($conn, $qry);
                                     <div class="card-body">
                                         <div class="product_item_text">
                                             <h6><a href="#">Blazer Tweed Buttons</a></h6>
-                                            <div class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </div>
                                             <div class="product_price">$ 69.00</div>
                                         </div>
                                     </div>

@@ -12,8 +12,8 @@ if (isset($_POST['submit'])) {
                 state varchar(40),
                 dob date,
                 mobile bigint,
-                image longblob,
-                address varchar(255)
+                image longblob
+                -- address varchar(255)
             )";
     }
     $alpha = '/^[A-Za-z]$/';
