@@ -62,7 +62,7 @@
         include "nav.php";
     ?>
 
-    <section class="contact p-5" style="background-color:#f8e7e0;height:200px">
+    <section class="contact p-5 mt-5" style="background-color:#f8e7e0;height:200px">
         <div class="container-fluid text-center">
             <div class="row">
                 <div class="col-lg-12" style="color:#416163;font-size:50px;">Contact us</div>

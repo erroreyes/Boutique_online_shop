@@ -1,79 +1,47 @@
 <?php
 session_start();
 include "config.php";
-if (isset($_SESSION['email'])) {
-    header("location:profile.php");
-}
-$qry = "SELECT * FROM user";
-$nerr = $emailerr = $perr = $cerr = $serr = $derr = $merr = $ierr = $gerr = $gender = "";
+
+$qry = "SELECT * FROM order";
+$nerr  = $serr = $merr = $aerr = $gerr = $derr="";
 if (isset($_POST['submit'])) {
     if (!mysqli_query($conn, $qry)) {
-        $craeteTable = "CREATE TABLE USER(
-                id int(4) auto_increment primary key,
+        $craeteTable = "CREATE TABLE order(
+                ord_id int(4) auto_increment primary key,
                 fullName varchar(60),
-                email varchar(40),
-                pwd text,
                 gender varchar(20),
                 state varchar(40),
-                dob date,
+                ord_date date,
                 mobile bigint,
-                image longblob
+                address  text
             )";
-        mysqli_query($conn, $craeteTable);
+            mysqli_query($conn,$craeteTable);
     }
     $alpha = '/^[A-Za-z]$/';
     $number = '/^[0-9]{10}$/';
     $name = $_POST['name'];
-    $email = $_POST['email'];
-    $pass = $_POST['pass'];
-    $cpass = $_POST['cpass'];
     $state = $_POST['state'];
-    $dob = $_POST['dob'];
+    $date=$_POST['date'];
     $mobile = $_POST['mobile'];
-    $target_dir = "upload";
-    $imgpath = $target_dir . basename($_FILES['file']['name']);
-    $moveimg = move_uploaded_file($_FILES['file']['tmp_name'], $imgpath);
-    $filesize = $_FILES['file']['size'];
-    $Emailqery = "SELECT * FROM user where email = '$email'";                                 //unique email
-    $Emailqerychk = mysqli_query($conn, $Emailqery);
-    $present = mysqli_num_rows($Emailqerychk);
-
-
-    if (empty($name) && empty($email) && empty($pass) && empty($cpass)) {
+    $address = $_POST['address'];
+    $gender = $_POST['gender'];
+    if (empty($name) ) {
         $nerr = "this field required";
-    } elseif (empty($email)) {
-        $emailerr = "email required";
-    } elseif (!preg_match("/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/", $email)) {
-        $emailerr = "invalid email ";
-    } elseif (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
-        $nerr = "only alpha and white space allow";
-    } elseif (empty($pass)) {
-        $perr = "password required";
-    } elseif (!strlen($pass) == 8 || !$alpha || !$number) {
-        $perr = "only 8 digit require";
-    } elseif (empty($cpass)) {
-        $cerr = "must be same as password";
-    } elseif ($pass !== $cpass) {
-        $cerr = "must be same as password";
     } elseif (empty($mobile)) {
         $merr = "mobile no is required";
     } elseif (!preg_match($number, $mobile)) {
         $merr = "must be 10 digit";
     } elseif (empty($state)) {
         $serr = "state is required";
-    } elseif (empty($dob)) {
-        $derr = "date is required";
-    } elseif (empty($_POST['gender'])) {
-        $gerr = "gender is required";
-    } elseif (empty($filesize)) {
-        $ierr = "image is required";
-    } elseif ($filesize > 1000000) {
-        $ierr = "image must be less than 1mb";
-    } elseif ($present > 0) {
-        $emailerr = "already exist";
+    }elseif (empty($date)) {
+        $derr = "state is required";
+    } elseif (empty($gender)) {
+        $gerr = "address is required";
+    } elseif (empty($address)) {
+        $aerr = "image is required";
     } else {
 
-        $insert = "INSERT INTO USER( `fullName`, `email`, `pwd`, `gender`,`state`, `dob`, `mobile`, `image`) VALUES('$name','$email','$pass','$_POST[gender]',' $state','$dob','$mobile','$imgpath')";
+        $insert = "INSERT INTO order( `fullName`,`gender`,`state`,`ord_date`, `mobile`, `address`) VALUES('$name','$gender',' $state','$date','$mobile','$address')";
         $insertchk = mysqli_query($conn, $insert);
         if ($insertchk) {
             header("location:User.php");
@@ -95,11 +63,11 @@ if (isset($_POST['submit'])) {
 
 <body class="bg-light">
     <?php include "nav.php" ?>
-    <div class="p-4"> </div>
+    <div class="p-5">  </div>
     <section class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
-                <h2 style="font-size: 48px; background-color:#f8e7e0;color:#416163;" class="text-center" id="banner">Sign Up</h2>
+                <h2 style="font-size: 48px; background-color:#f8e7e0;color:#416163;" class="text-center" id="banner">Order Form</h2>
                 <form class="form-container" method="POST" enctype="multipart/form-data">
                     <div class="row justify-content-center">
                         <div class="col-md-12 col-sm-5 col-xs-6 mt-4">
@@ -109,45 +77,17 @@ if (isset($_POST['submit'])) {
                                                                                                                         echo  $_POST['name'];
                                                                                                                     } ?>">
                             </div>
-                            <span><?php echo $nerr; ?></span>
-                        </div>
-                        <div class="col-md-4 col-sm-5 col-xs-6">
-                            <div class="form-group">
-                                <label>Email :</label>
-                                <input type="email" class="form-control" placeholder="Email" name="email" value="<?php if (isset($_POST['email'])) {
-                                                                                                                        echo $email = $_POST['email'];
-                                                                                                                    } ?>">
-                            </div>
-                            <span>* <?php echo $emailerr . $nerr; ?></span>
-                        </div>
-                        <div class="col-md-4 col-sm-5 col-xs-6">
-                            <div class="form-group">
-                                <label>Password :</label>
-                                <input type="password" class="form-control" placeholder="Password" name="pass" value="<?php if (isset($_POST['pass'])) {
-                                                                                                                            echo $pass = $_POST['pass'];
-                                                                                                                        } ?>">
-                            </div>
-                            <span><?php echo $perr . $nerr; ?></span>
-                        </div>
-                        <div class="col-md-4 col-sm-5 col-xs-6">
-                            <div class="form-group">
-                                <label>Confirm Password :</label>
-                                <input type="password" class="form-control" placeholder="Confirm Password" name="cpass" value="<?php if (isset($_POST['cpass'])) {
-                                                                                                                                    echo $cpass = $_POST['cpass'];
-                                                                                                                                } ?>">
-                            </div>
-                            <span><?php echo $cerr . $nerr; ?></span>
+                            <span>*<?php echo $nerr; ?></span>
                         </div>
 
-
                         <div class="col-md-4 col-sm-5 col-xs-6">
                             <div class="form-group">
-                                <label>DOB:</label>
-                                <input type="date" class="form-control" placeholder="UserName" name="dob" value="<?php if (isset($_POST['dob'])) {
-                                                                                                                        echo $dob = $_POST['dob'];
+                                <label>Date:</label>
+                                <input type="date" class="form-control" placeholder="Date" name="dob" value="<?php if (isset($_POST['date'])) {
+                                                                                                                        echo $dob = $_POST['date'];
                                                                                                                     } ?>">
                             </div>
-                            <span><?php echo $derr; ?></span>
+                            <span>*<?php echo $derr; ?></span>
                         </div>
                         <div class="col-md-4 col-sm-5 col-xs-6 text-left align-self-center">
                             <div class="form-group text-white">
@@ -161,17 +101,9 @@ if (isset($_POST['submit'])) {
                                                                                             echo 'checked';
                                                                                     } ?>> Female
                             </div>
-                            <span><?php echo $gerr; ?></span>
+                            <span>*<?php echo $gerr; ?></span>
                         </div>
-                        <div class="col-md-4 col-sm-5 col-xs-6">
-                            <div class="form-group">
-                                <label>Photo:</label>
-                                <input type="file" class="form-control" name="file" value="<?php if (isset($_FILES['file']['name'])) {
-                                                                                                echo $imgpath = $_FILES['file']['name'];
-                                                                                            } ?>">
-                            </div>
-                            <span><?php echo $ierr; ?></span>
-                        </div>
+                      
                         <div class="col-md-4 col-sm-5 col-xs-6">
                             <div class="form-group">
                                 <label>Mobile No:</label>
@@ -179,7 +111,7 @@ if (isset($_POST['submit'])) {
                                                                                                                             echo $mobile = $_POST['mobile'];
                                                                                                                         } ?>">
                             </div>
-                            <span><?php echo $merr; ?></span>
+                            <span>*<?php echo $merr; ?></span>
                         </div>
                         <div class="col-md-8 col-sm-5 col-xs-6 justify-content-end">
 
@@ -202,11 +134,21 @@ if (isset($_POST['submit'])) {
                                     </select>
                                 </div>
                             </div>
-                            <span><?php echo $serr; ?></span>
+                            <span>*<?php echo $serr; ?></span>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-5 col-xs-6">
+
+                            <div class="form-group">
+                                <label>Address :</label>
+                                <div > 
+                                    <textarea class="form-control" name="address"  cols="90" rows="2"></textarea>
+                                </div>
+                            </div>
+                            <span>*<?php echo $serr; ?></span>
                         </div>
                         <div class="col-md-12 col-sm-5 col-xs-6">
                             <div class="form-group text-right">
-                                <input type="submit" class="btn btn-lg  mt-3" id="btn1" value="Sign Up" name="submit">
+                                <input type="submit" class="btn btn-lg  mt-3" id="btn1" value="Confirm" name="submit">
                                 <a href="signUp.php" class="btn btn-lg mt-3 btn-danger" id="btn2">Cancel</a>
                             </div>
                         </div>

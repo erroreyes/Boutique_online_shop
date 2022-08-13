@@ -17,3 +17,7 @@ if (isset($_POST["adding_cart"])) {
     }
 }
  
+// buy product
+if (isset($_POST["buy"])) {
+    header("location:ord_form.php");
+}

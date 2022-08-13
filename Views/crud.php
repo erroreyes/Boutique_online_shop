@@ -1,7 +1,5 @@
 <?php
 include "config.php";
-// #################################################   add product
-
 // #################################################   delete product
 if(isset($_POST['delete_data'])){
     $id=$_POST['deleteid'];
@@ -17,5 +15,25 @@ if(isset($_POST['delete_data'])){
 }
 // #################################################   update product
 
+    if(isset($_POST['updatedata']))
+    {   
+        $pid = $_POST['update_id'];
+        
+        $pname = $_POST['pname'];
+        $price = $_POST['price'];
+        $img = $_POST['img'];
 
+        $query = "UPDATE product SET pname='$pname', price='$price', pimage='$img' WHERE pid='$pid'  ";
+        $query_run = mysqli_query($conn, $query);
+
+        if($query_run)
+        {
+            echo '<script> alert("Data Updated"); </script>';
+            header("Location:product.php");
+        }
+        else
+        {
+            echo '<script> alert("Data Not Updated"); </script>';
+        }
+    }
 ?>

@@ -1,4 +1,5 @@
-<?php session_start();
+<?php
+session_start();
 include "config.php";
 $qry = "SELECT * FROM product";
 $qrychk = mysqli_query($conn, $qry);
@@ -16,13 +17,12 @@ $qrychk = mysqli_query($conn, $qry);
     <link rel="stylesheet" href="../links/bootstrap/js/bootstrap.min.js">
     <!-- <link rel="stylesheet" href="x/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/regular.min.css" integrity="sha512-EbT6icebNlvxlD4ECiLvPOVBD0uQdt4pHRg8Gpkfirdu9W8l2rtRZO8rThjqeIK08ubcFeiFKHbek7y+lEbWIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <style>
-        <?php include "../css/home.css" ?>
-        .bgimg {
+        <?php include "../css/home.css" ?>.bgimg {
             background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
             background-image: url("../img/sea.jpg");
             background-attachment: fixed;
             width: 100%;
-            height: 700px;
+            height: 800px;
             background-size: cover;
             object-fit: cover;
         }
@@ -31,11 +31,13 @@ $qrychk = mysqli_query($conn, $qry);
             position: relative;
             overflow: hidden;
         }
-        .card-img{
+
+        .card-img {
             object-fit: cover;
             width: 255px;
             height: 255px;
         }
+
         .card .label {
             position: absolute;
             font-size: 12px;
@@ -58,12 +60,12 @@ $qrychk = mysqli_query($conn, $qry);
             color: #000;
         }
 
-        .card button {
+        .card .btn {
             background-color: #416163;
             color: #fff;
         }
 
-        .card button:hover {
+        .card .btn:hover {
             background-color: #1f2d2e;
             color: #fff;
         }
@@ -85,7 +87,7 @@ $qrychk = mysqli_query($conn, $qry);
     </style>
 </head>
 
-<body>
+<body class="bg-light">
     <?php
     include "nav.php";
     ?>
@@ -150,7 +152,9 @@ $qrychk = mysqli_query($conn, $qry);
             <div class="row3">
                 <div class="col4">
                     <p>Leather Shop Bag <br><br> from $39.00</p>
+
                 </div>
+
                 <div class="col4">
                     <p>Leather Shop Bag <br><br> from $49.00</p>
                 </div>
@@ -164,11 +168,13 @@ $qrychk = mysqli_query($conn, $qry);
         <div class="bestselling">
             <div class="container text-center">
                 <h1>Best sellers</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <hr class="mb-3">
+
+                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p> -->
                 <div class="row">
-                
+
                     <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto">
-                    <form action="insert_cart.php" method="POST">
+                        <form action="insert_cart.php" method="POST">
                             <div class="card border-0">
                                 <img src="../img/w3.webp" class="card-img img-fluid">
                                 <div class="label new">New</div>
@@ -176,21 +182,21 @@ $qrychk = mysqli_query($conn, $qry);
                                     <div class="card-body">
                                         <div class="product_item_text">
                                             <h6><a href="#">Blazer Tweed Buttons</a></h6>
-                                           
+
                                             <div class="product_price">Rs.500</div>
                                         </div>
                                         <input type="hidden" name="proname" value="blazer2">
                                         <input type="hidden" name="price" value="500">
-                                        <input type="number" name="quantity"  placeholder="Quantity">
+                                        <input type="number" name="quantity" value="1" placeholder="Quantity">
                                         <button class="btn btn-info w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
-                                        
+
                                     </div>
                                 </a>
                             </div>
                         </form>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto">
-                    <form action="insert_cart.php" method="POST">
+                        <form action="insert_cart.php" method="POST">
 
                             <div class="card border-0">
                                 <img src="../img/w2.webp" class="card-img img-fluid">
@@ -199,12 +205,12 @@ $qrychk = mysqli_query($conn, $qry);
                                     <div class="card-body">
                                         <div class="product_item_text">
                                             <h6><a href="#">Blazer Tweed Buttons</a></h6>
-                                           
+
                                             <div class="product_price">Rs.800</div>
                                         </div>
                                         <input type="hidden" name="proname" value="blazer3">
                                         <input type="hidden" name="price" value="800">
-                                        <input type="number" name="quantity" value="min='1' max='10'" placeholder="Quantity">
+                                        <input type="number" name="quantity" value="1" placeholder="Quantity">
                                         <button class="btn btn-info w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
                                     </div>
                                 </a>
@@ -212,7 +218,7 @@ $qrychk = mysqli_query($conn, $qry);
                         </form>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto">
-                    <form action="insert_cart.php" method="POST">
+                        <form action="insert_cart.php" method="POST">
                             <div class="card border-0">
                                 <img src="../img/w1.webp" class="card-img img-fluid">
                                 <div class="label new">New</div>
@@ -220,12 +226,12 @@ $qrychk = mysqli_query($conn, $qry);
                                     <div class="card-body">
                                         <div class="product_item_text">
                                             <h6><a href="#">Blazer Tweed Buttons</a></h6>
-                                            
+
                                             <div class="product_price">Rs.400</div>
                                         </div>
                                         <input type="hidden" name="proname" value="blazer4">
                                         <input type="hidden" name="price" value="400">
-                                        <input type="number" name="quantity" value="min='1' max='10'" placeholder="Quantity">
+                                        <input type="number" name="quantity" value="1" placeholder="Quantity">
                                         <button class="btn btn-info w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
                                     </div>
                                 </a>
@@ -241,12 +247,12 @@ $qrychk = mysqli_query($conn, $qry);
                                     <div class="card-body">
                                         <div class="product_item_text">
                                             <h6><a href="#">Blazer Tweed Buttons</a></h6>
-                                            
+
                                             <div class="product_price">Rs.300</div>
                                         </div>
-                                        <input type="hidden" name="proname" value="blazer2">
-                                        <input type="hidden" name="price" value="500">
-                                        <input type="number" name="quantity"  placeholder="Quantity">
+                                        <input type="hidden" name="proname" value="blazer5">
+                                        <input type="hidden" name="price" value="300">
+                                        <input type="number" name="quantity" value="1" placeholder="Quantity">
                                         <button class="btn btn-info w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
                                     </div>
                                 </a>
@@ -256,7 +262,7 @@ $qrychk = mysqli_query($conn, $qry);
                 </div>
 
                 <div class="row">
-                   
+
                     <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto">
                         <form method="POST">
                             <div class="card border-0">
@@ -266,12 +272,12 @@ $qrychk = mysqli_query($conn, $qry);
                                     <div class="card-body">
                                         <div class="product_item_text">
                                             <h6><a href="#">Blazer Tweed Buttons</a></h6>
-                                            
-                                            <div class="product_price">Rs.500</div>
+
+                                            <div class="product_price">Rs.550</div>
                                         </div>
-                                        <input type="hidden" name="proname" value="blazer2">
-                                        <input type="hidden" name="price" value="500">
-                                        <input type="number" name="quantity"  placeholder="Quantity">
+                                        <input type="hidden" name="proname" value="blazer9">
+                                        <input type="hidden" name="price" value="550">
+                                        <input type="number" name="quantity" value="1" placeholder="Quantity">
                                         <button class="btn btn-info w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
                                     </div>
                                 </a>
@@ -287,12 +293,12 @@ $qrychk = mysqli_query($conn, $qry);
                                     <div class="card-body">
                                         <div class="product_item_text">
                                             <h6><a href="#">Blazer Tweed Buttons</a></h6>
-                                           
-                                            <div class="product_price">Rs.800</div>
+
+                                            <div class="product_price">Rs.880</div>
                                         </div>
-                                        <input type="hidden" name="proname" value="blazer2">
-                                        <input type="hidden" name="price" value="500">
-                                        <input type="number" name="quantity"  placeholder="Quantity">
+                                        <input type="hidden" name="proname" value="blazer6">
+                                        <input type="hidden" name="price" value="880">
+                                        <input type="number" name="quantity" value="1" placeholder="Quantity">
                                         <button class="btn btn-info w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
                                     </div>
                                 </a>
@@ -308,12 +314,12 @@ $qrychk = mysqli_query($conn, $qry);
                                     <div class="card-body">
                                         <div class="product_item_text">
                                             <h6><a href="#">Blazer Tweed Buttons</a></h6>
-                                            
-                                            <div class="product_price">Rs.400</div>
+
+                                            <div class="product_price">Rs.430</div>
                                         </div>
-                                        <input type="hidden" name="proname" value="blazer2">
-                                        <input type="hidden" name="price" value="500">
-                                        <input type="number" name="quantity"  placeholder="Quantity">
+                                        <input type="hidden" name="proname" value="blazer7">
+                                        <input type="hidden" name="price" value="430">
+                                        <input type="number" name="quantity" value="1" placeholder="Quantity">
                                         <button class="btn btn-info w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
                                     </div>
                                 </a>
@@ -323,27 +329,27 @@ $qrychk = mysqli_query($conn, $qry);
                     <?php
                     while ($row = mysqli_fetch_assoc($qrychk)) {
                     ?>
-                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block">
-                        <form action="insert_cart.php" method="POST">
-                            <div class="card border-0">
-                                <img src="<?php echo $row['pimage']; ?>" class="card-img">
-                                <div class="label new">New</div>
-                                <a href="order.html" style="text-decoration: none; color: #416163;">
-                                    <div class="card-body">
-                                        <div class="product_item_text">
-                                            <h6><a href="#"><?php echo $row['pname']; ?></a></h6>
-                                            <div class="product_price">Rs.<?php echo $row['price']; ?></div>
+                        <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block">
+                            <form action="insert_cart.php" method="POST">
+                                <div class="card border-0">
+                                    <img src="<?php echo $row['pimage']; ?>" class="card-img">
+                                    <div class="label new">New</div>
+                                    <a href="order.html" style="text-decoration: none; color: #416163;">
+                                        <div class="card-body">
+                                            <div class="product_item_text">
+                                                <h6><a href="#"><?php echo $row['pname']; ?></a></h6>
+                                                <div class="product_price">Rs.<?php echo $row['price']; ?></div>
+                                            </div>
+                                            <input type="hidden" name="proname" value="<?php echo $row['pname']; ?>">
+                                            <input type="hidden" name="price" value="<?php echo $row['price']; ?>">
+                                            <input type="number" name="quantity" value="1" placeholder="Quantity">
+                                            <button class="btn w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
+                                            <!-- <button class="btn btn-info btn1 text-white w-100 mt-3" type="submit" name="buy">Buy Now</button> -->
                                         </div>
-                                        <input type="hidden" name="proname" value="<?php echo $row['pname']; ?>">
-                                        <input type="hidden" name="price" value="<?php echo $row['price']; ?>">
-                                        <input type="number" name="quantity" value="1" placeholder="Quantity">
-                                        <button class="btn w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
-                                        
-                                    </div>
-                                </a>
-                            </div>
-                        </form>
-                    </div>
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
                     <?php
                     }
                     ?>
@@ -353,6 +359,7 @@ $qrychk = mysqli_query($conn, $qry);
                 <div class="products mt-5">
                     <div class="container-fluid text-center">
                         <h1>Shop Categories</h1>
+                        <hr>
                         <div class="row p-5">
                             <div class="col-lg-4 col-md-4 col-sm-10 col-12 d-block m-auto  p-5" style="background-color: #fae3d9;">
                                 <h2>Leather Bags</h2>
@@ -378,51 +385,75 @@ $qrychk = mysqli_query($conn, $qry);
                 <div class="traditional">
                     <div class="container text-center">
                         <h1>Jacket</h1>
-
+                        <hr>
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto">
-                                <div class="card">
-                                    <img src="../img/j2.webp" class="card-img img-fluid">
-                                    <div class="card-body">
-                                        <div class="product_item_text">
-                                            <h6><a href="#">Blazer Tweed Buttons</a></h6>
-                                            <div class="product_price">$ 69.00</div>
+                                <form method="POST">
+                                    <div class="card border-0">
+                                        <img src="../img/j2.webp" class="card-img img-fluid">
+                                        <div class="card-body">
+                                            <div class="product_item_text">
+                                                <h6><a href="#">Blazer Tweed Buttons</a></h6>
+                                                <div class="product_price">Rs.800</div>
+                                            </div>
+                                            <input type="hidden" name="proname" value="Tweed">
+                                            <input type="hidden" name="price" value="800">
+                                            <input type="number" name="quantity" value="1" placeholder="Quantity">
+                                            <button class="btn btn-info w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto">
-                                <div class="card">
-                                    <img src="../img/i6.jpg" class="card-img img-fluid">
-                                    <div class="card-body">
-                                        <div class="product_item_text">
-                                            <h6><a href="#">Blazer Tweed Buttons</a></h6>
-                                            <div class="product_price">$ 69.00</div>
+                                <form method="POST">
+                                    <div class="card border-0">
+                                        <img src="../img/i6.jpg" class="card-img img-fluid">
+                                        <div class="card-body">
+                                            <div class="product_item_text">
+                                                <h6><a href="#">Blazer Tweed Buttons</a></h6>
+                                                <div class="product_price">Rs.650</div>
+                                            </div>
+                                            <input type="hidden" name="proname" value="Tweed1">
+                                            <input type="hidden" name="price" value="650">
+                                            <input type="number" name="quantity" value="1" placeholder="Quantity">
+                                            <button class="btn btn-info w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto">
-                                <div class="card">
-                                    <img src="../img/j4.jpg" class="card-img img-fluid">
-                                    <div class="card-body">
-                                        <div class="product_item_text">
-                                            <h6><a href="#">Blazer Tweed Buttons</a></h6>
-                                            <div class="product_price">$ 69.00</div>
+                                <form method="POST">
+                                    <div class="card border-0">
+                                        <img src="../img/j4.jpg" class="card-img img-fluid">
+                                        <div class="card-body">
+                                            <div class="product_item_text">
+                                                <h6><a href="#">Blazer Tweed Buttons</a></h6>
+                                                <div class="product_price">Rs.700</div>
+                                            </div>
+                                            <input type="hidden" name="proname" value="Tweed3">
+                                            <input type="hidden" name="price" value="700">
+                                            <input type="number" name="quantity" value="1" placeholder="Quantity">
+                                            <button class="btn btn-info w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto">
-                                <div class="card">
-                                    <img src="../img/j5.jpg" class="card-img img-fluid">
-                                    <div class="card-body">
-                                        <div class="product_item_text">
-                                            <h6><a href="#">Blazer Tweed Buttons</a></h6>
-                                            <div class="product_price">$ 69.00</div>
+                                <form method="POST">
+                                    <div class="card border-0">
+                                        <img src="../img/j5.jpg" class="card-img img-fluid">
+                                        <div class="card-body">
+                                            <div class="product_item_text">
+                                                <h6><a href="#">Blazer Tweed Buttons</a></h6>
+                                                <div class="product_price">Rs.950</div>
+                                            </div>
+                                            <input type="hidden" name="proname" value="Tweed5">
+                                            <input type="hidden" name="price" value="950">
+                                            <input type="number" name="quantity" value="1" placeholder="Quantity">
+                                            <button class="btn btn-info w-100 mt-3" type="submit" name="adding_cart">Add to cart</button>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
 
                         </div>
@@ -430,11 +461,11 @@ $qrychk = mysqli_query($conn, $qry);
 
                 </div>
             </div>
-
-                <div class="p-5 mt-4"></div>
-                <div class="mt-5">
-                    <?php include "footer.php" ?>
-                </div>
+            <div class="p-3"></div>
+            <div class="p-5 mt-5"></div>
+            <div class="mt-5">
+                <?php include "footer.php" ?>
+            </div>
 
 
 </body>

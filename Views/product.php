@@ -1,41 +1,44 @@
 <?php
+session_start();
 include "config.php";
+if (!$_SESSION['admin']) {
+    $_SESSION['admin'] = $_COOKIE['admin'];
+}
 $qry = "SELECT * FROM product";
 $qrychk = mysqli_query($conn, $qry);
 // $nameerr = $nerr = $perr = "";
 
-// if (!$qrychk) {
-//     $craetetbl = "CREATE TABLE product(
-//             pid int(4) auto_increment primary key,
-//             pname varchar(70),
-//             price bigint,
-//             pimage longblob
-//         )";
-//     mysqli_query($conn, $craetetbl);
-// }
-// if (isset($_POST['add'])) {
-//     $pname = $_POST['pname'];
-//     $price = $_POST['price'];
-//     $target_dir = "../img";
-//     $imgpath = $target_dir . basename($_FILES['img']['name']);
-//     $moveimg = move_uploaded_file($_FILES['img']['name'], $imgpath);
-//     if (empty($pname)) {
-//         $nerr = "this field required";
-//     } elseif (!preg_match("/^[a-zA-Z-' ]*$/", $pname)) {
-//         $nameerr = "only alpha and white space allow";
-//     } elseif (!preg_match("/^[0-9]*$/", $price)) {
-//         $perr = "must be numeric value";
-//     } else {
-//         $insert = "INSERT INTO `product` (`pname`,`price`,`pimage`) values ('$pname','$price','$imgpath')";
-//         $insertchk = mysqli_query($conn, $insert);
-//         if ($insertchk) {
-//             echo "<script>alert('data inserted')</script>";
-//             // header("location:product.php");
-//         } else {
-//             mysqli_error($conn);
-//         }
-//     }
-// }
+if (!$qrychk) {
+    $craetetbl = "CREATE TABLE product(
+            pid int(4) auto_increment primary key,
+            pname varchar(70),
+            price bigint,
+            pimage longblob
+        )";
+    mysqli_query($conn, $craetetbl);
+}
+if (isset($_POST['add'])) {
+    $pname = $_POST['pname'];
+    $price = $_POST['price'];
+    $target_dir = "../img/";
+    $imgpath = $target_dir . basename($_FILES['img']['name']);
+    $moveimg = move_uploaded_file($_FILES['img']['name'], $imgpath);
+    // if (empty($pname)) {
+    //     $nerr = "this field required";
+    // } elseif (!preg_match("/^[a-zA-Z-' ]*$/", $pname)) {
+    //     $nameerr = "only alpha and white space allow";
+    // } elseif (!preg_match("/^[0-9]*$/", $price)) {
+    //     $perr = "must be numeric value";
+    // } else {
+    $insert = "INSERT INTO `product` (`pname`,`price`,`pimage`) values ('$pname','$price','$imgpath')";
+    $insertchk = mysqli_query($conn, $insert);
+    if ($insertchk) {
+        header("location:product.php");
+    } else {
+        mysqli_error($conn);
+    }
+    // }
+}
 
 
 ?>
@@ -61,28 +64,21 @@ $qrychk = mysqli_query($conn, $qry);
                         <input type="hidden" name="update_id" id="update_id">
                         <div class="form-group">
                             <label for="product_name" class="col text-left">Product Name :</label>
-                            <input type="text" placeholder="Name" name="pname" class="form-control">
+                            <input type="text" placeholder="Name" name="pname" id="pname" class="form-control">
                         </div>
-                        <span>*<?php echo $nerr;
-                                echo $nameerr; ?></span>
-
+                        
                         <div class="form-group">
                             <label for="product_price" class="col text-left">Price :</label>
-                            <input type="text" placeholder="Price" name="price" class="form-control">
+                            <input type="text" placeholder="Price" name="price" id="price" class="form-control">
                         </div>
-                        <span>*<?php echo $nerr;
-                                echo $perr; ?></span>
 
                         <div class="form-group">
                             <label for="product_img" class="col text-left">Image :</label>
-                            <input type="file" name="img" class="form-control">
+                            <input type="file" name="img" id="image" class="form-control">
                         </div>
-                        <span>*<?php echo $nerr; ?></span>
-
-                        <!-- <div class="modal-footer"> -->
+                       
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" name="update">Update</button>
-                        <!-- </div> -->
+                        <button type="submit" class="btn btn-primary" name="updatedata">Update</button>
                     </form>
                 </div>
 
@@ -93,24 +89,21 @@ $qrychk = mysqli_query($conn, $qry);
     <!-- ************************************************************* -->
     <!---------------  DELETE MODAL ------------ -->
     <div class="modal fade" id="deletemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Delete Product</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="crud.php" method="POST" enctype="multipart/form-data">
-                        <input type="hidden" name="deleteid" id="deleteid">
-                        <div>
-                            <h4 class="text-info">ARE YOY SURE TO DELETE THIS DATA</h4>
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                            <button type="submit" class="btn btn-primary" name="delete_data">Yes</button>
-                        </div>
-                    </form>
-                </div>
+
+                <!-- <div class="modal-body"> -->
+                <form action="crud.php" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="deleteid" id="deleteid">
+                    <div class="bg-light">
+                        <p class="text-warning  text-center p-5" style="font-size:27px;">Are you sure to delete this data ?</p>
+                    </div>
+                    <div class="text-right mr-5">
+                        <button type="button" class="btn btn-danger w-25 mr-1" data-bs-dismiss="modal">No</button>
+                        <button type="submit" class="btn w-25 text-white" name="delete_data" style="background-color:#416163 ;">Yes</button>
+                    </div>
+                </form>
+                <!-- </div> -->
 
             </div>
         </div>
@@ -118,57 +111,62 @@ $qrychk = mysqli_query($conn, $qry);
     <!-- ***************************************        DELETE END           *********************************************** -->
 
     <?php include "sidebar.php" ?>
-    <div class="container-fluid">
-        <div class="row justify-content-end text-right mt-5 mr-5">
-            <div class="col-12">
-                <!-- Button trigger modal -->
-                <a href="add_product.php" type="button" class="btn btn-primary" >
-                    Add Product
-                </a>
-                
+    <div class="container-fluid bg-light p-1">
+        <div class="row justify-content-end">
+            
+            <div class="col-10 text-right mr-5 align-self-center">
 
-                <!-- Modal -->
-                <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form method="POST" enctype="multipart/form-data">
-                                    <div class="form-group">
-                                        <label for="product_name" class="col text-left">Product Name :</label>
-                                        <input type="text" placeholder="Name" name="pname" class="form-control">
-                                    </div>
-                                    <span>*<?php echo $nerr;
-                                            echo $nameerr; ?></span>
-
-                                    <div class="form-group">
-                                        <label for="product_price" class="col text-left">Price :</label>
-                                        <input type="text" placeholder="Price" name="price" class="form-control">
-                                    </div>
-                                    <span>*<?php echo $nerr;
-                                            echo $perr; ?></span>
-
-                                    <div class="form-group">
-                                        <label for="product_img" class="col text-left">Image :</label>
-                                        <input type="file" name="img" class="form-control">
-                                    </div>
-                                    <span>*<?php echo $nerr; ?></span>
-
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary" name="add">Add</button>
-                                </form>
-                            </div>
-
-                        </div>
-                    </div>
-                </div> -->
+                <p style="font-size:20px;"><i class="fas fa-user"></i> <?php echo $_SESSION['admin']; ?></p>
             </div>
         </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="product_name" class="col text-left">Product Name :</label>
+                            <input type="text" placeholder="Name" name="pname" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="product_price" class="col text-left">Price :</label>
+                            <input type="text" placeholder="Price" name="price" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="product_img" class="col text-left">Image :</label>
+                            <input type="file" name="img" class="form-control">
+                        </div>
+
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" name="add">Add</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+
         <div class="row justify-content-end">
-            <div class="col-10 mt-4">
+            <div class="col-5 text-left" style="padding-top:2%;margin-right:2.2%;">
+                <p style="font-size:35px;color:#416163;">Product Details</p>
+            </div>
+            <div class="col-4 text-right align-self-center mr-5">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-info w-50" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Add Product
+                </button>
+            </div>
+            <div class="col-10" style="padding: 0 4%;">
                 <table class="table table-stripped bg-light text-center ">
                     <tr style="background-color:#416163;color:#fff">
                         <th>ID</th>
@@ -185,7 +183,7 @@ $qrychk = mysqli_query($conn, $qry);
                             <td><?php echo $row['pid']; ?></td>
                             <td><?php echo $row['pname']; ?></td>
                             <td><?php echo $row['price']; ?></td>
-                            <td><img src="<?php echo $row['pimage']; ?>" alt="" width="100px" height="100"></td>
+                            <td><img src="<?php echo $row['pimage']; ?>" alt="" width="100px"></td>
                             <td style="color:green;" class="edit"><i class="fas fa-pen"></i></td>
                             <td class="text-danger delete"><i class="fas fa-trash"></i></td>
                         </tr>

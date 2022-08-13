@@ -1,5 +1,9 @@
 <?php
+session_start();
 include "config.php";
+if (isset($_SESSION['admin'])) {
+    header("location:user_data.php");
+}
 $qry = "SELECT * FROM adminTbl";
 $chk = mysqli_query($conn, $qry);
 
@@ -26,6 +30,8 @@ if (isset($_POST['submit'])) {
     } elseif ($admindata['password'] != $adminpss) {
         $perr = "invalid password";
     } else{
+        $_SESSION['admin'] = $admindata['adminid'];
+        setcookie('admin',$_SESSION['admin'],time()+900);
          header("location:user_data.php");
     }
 }

@@ -7,18 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>product</title>
-    <!-- <link rel="stylesheet" href="../css/shop.css"> -->
-    <!-- <link rel="stylesheet" href="../links/css/all.css"> -->
     <link rel="stylesheet" href="../links/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../links/bootstrap/js/bootstrap.min.js">
 </head>
 
 <body>
-    <!-- logo and navigation -->
     <?php
     include "nav.php";
     ?>
-    <div class="container">
+    <div class="container p-5 mt-5">
         <table class="table text-center">
             <form method="POST">
                 <tr class=" alert-info" style="font-weight:bolder;">
@@ -27,7 +24,7 @@
                     <th>quantity</th>
                     <th>DELETE</th>
                     <th class="text-center" colspan="4">
-                        <h5>Total</h5>
+                        <h5>Sub Total</h5>
                     </th>
                 
 
@@ -69,8 +66,8 @@
                     }
                     ?>
                 </tr>
-                <tr>
-                    <td colspan="4"></td>
+                <tr class="alert-info">
+                    <td colspan="4" class="text-center fw-bold"><h4>Total Amount</h4></td>
                     <td colspan="2"><?php echo $ptotal; ?></td>
                 </tr>
 

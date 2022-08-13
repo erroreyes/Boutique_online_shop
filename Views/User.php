@@ -1,16 +1,21 @@
 <?php
 session_start();
 include "config.php";
+if (isset($_SESSION['email'])) {
+    header("location:profile.php");
+}
 if (isset($_POST['submit'])) {
     $email = $_POST['username'];
     $password = $_POST['password'];
     $qry = "SELECT * FROM USER WHERE email = '$email'";
     $qrychk = mysqli_query($conn, $qry);
     $row = mysqli_fetch_assoc($qrychk);
+    setcookie('email', $email, time() + 300);
+    setcookie('password', $pass, time() + 300);
     if (mysqli_num_rows($qrychk) > 0) {
         $_SESSION['email'] = $row['email'];
         $_SESSION['password'] = $row['pwd'];
-        header('location:home.php');
+        header('location:profile.php');
     } else {
         echo "invalid";
     }

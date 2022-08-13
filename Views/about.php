@@ -21,6 +21,11 @@
             background-size: cover;
             object-fit: cover;
         }
+        .card-img {
+            object-fit: cover;
+            width: 250px;
+            height:350px;
+        }
     </style>
 </head>
 
@@ -68,38 +73,31 @@
         <div class="container text-center">
             <h2 style="color: #416163;">Our Team</h2>
             <div class="row">
-                <!-- <div class="col-lg-4 col-md-4 col-sm-10 col-12 p-5">
-                    <img src="../img/t1.jpg" class="rounded" height="250" width="250">
-                    <figcaption class="mt-4" style="font-size:20px;">
-                        <span  >John Garland</span>
-                        <div style="color:#416163;">Designer</div>
-                    </figcaption>
-                </div> -->
                 <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto">
                     <div class="card border-0">
-                        <img src="../img/o1.jpg" class="card-img img-fluid">
+                        <img src="../img/o1.jpg" class="card-img ">
                         <div class="card-body" style="font-size:20px;">
-                            <span>John Garland</span>
-                            <div style="color:#416163;">Designer</div>
+                            <span>John Archand</span>
+                            <div style="color:#416163;">Owner</div>
                         </div>
                     </div>
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto">
                     <div class="card border-0">
-                        <img src="../img/o2.jpg" class="card-img img-fluid">
+                        <img src="../img/o2.jpg" class="card-img ">
                         <div class="card-body" style="font-size:20px;">
-                            <span>John Garland</span>
-                            <div style="color:#416163;">Designer</div>
+                            <span>Miara Garland</span>
+                            <div style="color:#416163;">Manager</div>
                         </div>
                     </div>
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto">
                     <div class="card border-0">
-                        <img src="../img/o3.jpg" class="card-img img-fluid">
+                        <img src="../img/o3.jpg" class="card-img ">
                         <div class="card-body" style="font-size:20px;">
-                            <span>John Garland</span>
+                            <span>Femina Mehra</span>
                             <div style="color:#416163;">Designer</div>
                         </div>
                     </div>
@@ -108,6 +106,7 @@
             </div>
         </div>
     </section>
+    <div class="p-3"></div>
     <?php include "footer.php" ?>
 
 </body>
