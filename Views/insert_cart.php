@@ -1,6 +1,7 @@
 <?php
 session_start();
-
+if (isset($_SESSION['email'])) {
+    
 if (isset($_POST["adding_cart"])) {
     $proname = $_POST['proname'];
     $pro_price = $_POST['price'];
@@ -13,8 +14,14 @@ if (isset($_POST["adding_cart"])) {
      
     $_SESSION['cart'][] = array('proname' => $proname, 'price' => $pro_price, 'quantity' => $pro_quantity);
     print_r($_SESSION['cart']);
-     header("location:cart.php");
+     header("location:home.php");
     }
+}
+
+}
+else
+{
+    header("location:User.php");
 }
  
 // buy product

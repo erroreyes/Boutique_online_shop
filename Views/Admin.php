@@ -39,6 +39,7 @@ if (isset($_POST['submit'])) {
 
 
 <html>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link rel="stylesheet" href="../links/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="../links/fontawesome-free-5.15.4-web/css/all.min.css">
 
@@ -90,7 +91,7 @@ if (isset($_POST['submit'])) {
 <body class="bg">
     <?php include "nav.php" ?>
     <div class="p-5"></div>
-    <section class="container">
+    <section class="container" data-aos="zoom-in" data-aos-duration="1000">
         <div class="row justify-content-center">
             <div class=" col-lg-7 col-md-10 col-sm-10 col-xs-12">
                 <h1 style="font-size: 50px; background-color:#f8e7e0;color:#416163;margin-top:0;" class="text-center banner">Admin</h1>
@@ -121,7 +122,10 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
     </section>
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script> -->

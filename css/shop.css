@@ -8,18 +8,15 @@
 }
 
 .headtext h1{
-    padding-top: 30%;
     font-weight: lighter;
     font-size:70px;
     color:white;
-    text-align:left;
     box-sizing: border-box;
 }
 .headtext hr{
     background-color: white;
-    text-align:left;
-    width:30%;
-    height: 1px;
+  
+    
 }
 
 

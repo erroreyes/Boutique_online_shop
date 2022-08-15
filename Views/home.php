@@ -13,13 +13,15 @@ $qrychk = mysqli_query($conn, $qry);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>boutique</title>
     <link rel="stylesheet" href="../links/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="../links/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../links/bootstrap/js/bootstrap.min.js">
     <!-- <link rel="stylesheet" href="x/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/regular.min.css" integrity="sha512-EbT6icebNlvxlD4ECiLvPOVBD0uQdt4pHRg8Gpkfirdu9W8l2rtRZO8rThjqeIK08ubcFeiFKHbek7y+lEbWIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <style>
-        <?php include "../css/home.css" ?>.bgimg {
+        <?php include "../css/home.css" ?>
+        .bgimg {
             background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-            background-image: url("../img/sea.jpg");
+            background-image: url("../img/center.jpg");
             background-attachment: fixed;
             width: 100%;
             height: 800px;
@@ -91,8 +93,8 @@ $qrychk = mysqli_query($conn, $qry);
     <?php
     include "nav.php";
     ?>
-    <div class="bgimg">
-        <div class="container headtext">
+    <div class="bgimg" data-aos="zoom-in" data-aos-duration="1500">
+        <div class="container headtext" data-aos="fade-right" data-aos-duration="1000">
             <h1>Our <br> Collection</h1>
             <hr class="bg-white w-25" style="height:2px;margin-right:20%;">
         </div>
@@ -100,11 +102,11 @@ $qrychk = mysqli_query($conn, $qry);
     <!-- welcome to stor -->
     <div class="shop">
         <div class="wlcmstore">
-            <h1>Welcome to Store</h1>
+            <h1 data-aos="zoom-out" data-aos-duration="1500">Welcome to Store</h1>
             <hr>
             <!-- <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. amet consectetur adipisicing elit asperiores similique velit ullam.<br>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. </p> -->
-            <div class="row2">
+            <div class="row2"  data-aos="zoom-in" data-aos-duration="1500">
                 <div class="col3">
                     <i class="fas fa-phone-volume"></i>
                 </div>
@@ -115,7 +117,7 @@ $qrychk = mysqli_query($conn, $qry);
                     <i class="fas fa-shuttle-van"></i>
                 </div>
             </div>
-            <div class="row3">
+            <div class="row3" data-aos="zoom-in" data-aos-duration="1500">
                 <!-- row3  -->
                 <div class="col5">
 
@@ -134,10 +136,10 @@ $qrychk = mysqli_query($conn, $qry);
 
         <!-- new arrivals  -->
         <div class="newarrival">
-            <h1>New Arrivals</h1>
+            <h1 data-aos="zoom-in" data-aos-duration="1500">New Arrivals</h1>
             <hr><br>
-            <p>Always the latest and most special products</p>
-            <div class="row2">
+            <p data-aos="zoom-in" data-aos-duration="1500">Always the latest and most special products</p>
+            <div class="row2" data-aos="zoom-in" data-aos-duration="1500">
                 <!-- row1 -->
                 <div class="col3">
                     <img src="../img/i5.jpg">
@@ -149,7 +151,7 @@ $qrychk = mysqli_query($conn, $qry);
                     <img src="../img/i11.jpg">
                 </div>
             </div>
-            <div class="row3">
+            <div class="row3" data-aos="zoom-in" data-aos-duration="1500">
                 <div class="col4">
                     <p>Leather Shop Bag <br><br> from $39.00</p>
 
@@ -167,13 +169,13 @@ $qrychk = mysqli_query($conn, $qry);
 
         <div class="bestselling">
             <div class="container text-center">
-                <h1>Best sellers</h1>
-                <hr class="mb-3">
+                <h1 data-aos="zoom-in" data-aos-duration="1500">Best sellers</h1>
+                <hr class="mb-3" data-aos="zoom-in" data-aos-duration="1500">
 
                 <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p> -->
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto">
+                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
                         <form action="insert_cart.php" method="POST">
                             <div class="card border-0">
                                 <img src="../img/w3.webp" class="card-img img-fluid">
@@ -195,7 +197,7 @@ $qrychk = mysqli_query($conn, $qry);
                             </div>
                         </form>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto">
+                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
                         <form action="insert_cart.php" method="POST">
 
                             <div class="card border-0">
@@ -217,7 +219,7 @@ $qrychk = mysqli_query($conn, $qry);
                             </div>
                         </form>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto">
+                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
                         <form action="insert_cart.php" method="POST">
                             <div class="card border-0">
                                 <img src="../img/w1.webp" class="card-img img-fluid">
@@ -238,7 +240,7 @@ $qrychk = mysqli_query($conn, $qry);
                             </div>
                         </form>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto">
+                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
                         <form method="POST">
                             <div class="card border-0">
                                 <img src="../img/w7.webp" class="card-img img-fluid">
@@ -263,7 +265,7 @@ $qrychk = mysqli_query($conn, $qry);
 
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto">
+                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
                         <form method="POST">
                             <div class="card border-0">
                                 <img src="../img/w4.webp" class="card-img img-fluid">
@@ -284,7 +286,7 @@ $qrychk = mysqli_query($conn, $qry);
                             </div>
                         </form>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto">
+                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
                         <form method="POST">
                             <div class="card border-0">
                                 <img src="../img/w9.webp" class="card-img img-fluid">
@@ -305,7 +307,7 @@ $qrychk = mysqli_query($conn, $qry);
                             </div>
                         </form>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto">
+                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
                         <form method="POST">
                             <div class="card border-0">
                                 <img src="../img/w11.webp" class="card-img img-fluid">
@@ -329,7 +331,7 @@ $qrychk = mysqli_query($conn, $qry);
                     <?php
                     while ($row = mysqli_fetch_assoc($qrychk)) {
                     ?>
-                        <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block">
+                        <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block" data-aos="zoom-in" data-aos-duration="1500">
                             <form action="insert_cart.php" method="POST">
                                 <div class="card border-0">
                                     <img src="<?php echo $row['pimage']; ?>" class="card-img">
@@ -358,10 +360,10 @@ $qrychk = mysqli_query($conn, $qry);
 
                 <div class="products mt-5">
                     <div class="container-fluid text-center">
-                        <h1>Shop Categories</h1>
+                        <h1 data-aos="zoom-in" data-aos-duration="1500">Shop Categories</h1>
                         <hr>
-                        <div class="row p-5">
-                            <div class="col-lg-4 col-md-4 col-sm-10 col-12 d-block m-auto  p-5" style="background-color: #fae3d9;">
+                        <div class="row p-5" data-aos="zoom-in" data-aos-duration="1500">
+                            <div class="col-lg-4 col-md-4 col-sm-10 col-12 d-block m-auto  p-5" style="background-color: #fae3d9;" >
                                 <h2>Leather Bags</h2>
                                 <img src="../img/s1.webp" height="100px" width="150px">
                                 <p>Lorem ipsum dolor sit amet consectetur<br> consectetur adipisicing elit.</p>
@@ -384,10 +386,10 @@ $qrychk = mysqli_query($conn, $qry);
 
                 <div class="traditional">
                     <div class="container text-center">
-                        <h1>Jacket</h1>
+                        <h1 data-aos="zoom-in" data-aos-duration="1500">Jacket</h1>
                         <hr>
                         <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
                                 <form method="POST">
                                     <div class="card border-0">
                                         <img src="../img/j2.webp" class="card-img img-fluid">
@@ -404,7 +406,7 @@ $qrychk = mysqli_query($conn, $qry);
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
                                 <form method="POST">
                                     <div class="card border-0">
                                         <img src="../img/i6.jpg" class="card-img img-fluid">
@@ -421,7 +423,7 @@ $qrychk = mysqli_query($conn, $qry);
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
                                 <form method="POST">
                                     <div class="card border-0">
                                         <img src="../img/j4.jpg" class="card-img img-fluid">
@@ -438,7 +440,7 @@ $qrychk = mysqli_query($conn, $qry);
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
                                 <form method="POST">
                                     <div class="card border-0">
                                         <img src="../img/j5.jpg" class="card-img img-fluid">
@@ -466,8 +468,10 @@ $qrychk = mysqli_query($conn, $qry);
             <div class="mt-5">
                 <?php include "footer.php" ?>
             </div>
-
-
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
 </body>
 
 </html>

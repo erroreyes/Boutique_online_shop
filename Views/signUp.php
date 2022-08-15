@@ -85,6 +85,7 @@ if (isset($_POST['submit'])) {
 
 ?>
 <html>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link rel="stylesheet" href="../links/bootstrap/css/bootstrap.min.css">
 
 <style>
@@ -96,7 +97,7 @@ if (isset($_POST['submit'])) {
 <body class="bg-light">
     <?php include "nav.php" ?>
     <div class="p-4"> </div>
-    <section class="container mt-5">
+    <section class="container mt-5" data-aos="zoom-in" data-aos-duration="1000">
         <div class="row justify-content-center">
             <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
                 <h2 style="font-size: 48px; background-color:#f8e7e0;color:#416163;" class="text-center" id="banner">Sign Up</h2>
@@ -214,7 +215,10 @@ if (isset($_POST['submit'])) {
             </div>
 
     </section>
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
