@@ -22,7 +22,7 @@
                     <th>product name</th>
                     <th>price</th>
                     <th>quantity</th>
-                    <th class="text-center" colspan="4">
+                    <th class="text-center" colspan="2">
                         <h5>Sub Total</h5>
                     </th>
                     <th>DELETE</th>
@@ -73,7 +73,6 @@
                                     <td><input type='hidden' name='item' value='$value[proname]'></td>
                                     <td class='text-left subtotal' id='t'>$subtotal</td>
                                     <td><button  class='btn btn-outline-danger' name='remove'>Delete</button></td>
-                                    <td><button  class='btn btn-outline-success' name='update'>Update</button></td>x
                                 </form>
                                 </tr>
                                 ";
@@ -83,11 +82,16 @@
 
                 </tr>
                 <!-- <td id="t"></td> -->
+                <tr>
+                    <td colspan="8"></td>
+                </tr>
+               
                 <tr class="alert-info">
-                    <td colspan="4" class="text-center fw-bold">
+                    <td colspan="3" class="text-center fw-bold">
                         <h4>Total Amount</h4>
                     </td>
-                    <td colspan="2" class="total"><?php echo $total; ?></td>
+                    <td colspan="2" class="total text-center"><?php echo $total; ?></td>
+                    <td colspan="2"></td>
                 </tr>
 
             </form>

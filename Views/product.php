@@ -13,7 +13,7 @@ if (!$qrychk) {
             pid int(4) auto_increment primary key,
             pname varchar(70),
             price bigint,
-            pimage longblob
+            pimage text
         )";
     mysqli_query($conn, $craetetbl);
 }
@@ -39,6 +39,7 @@ if (isset($_POST['add'])) {
     }
     // }
 }
+// update
 
 
 ?>
@@ -60,8 +61,9 @@ if (isset($_POST['add'])) {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" enctype="multipart/form-data" action="crud.php">
-                        <input type="hidden" name="update_id" id="update_id">
+                    <form action="crud.php" method="POST" enctype="multipart/form-data" >
+                        <input type="hidden" name="update_id" id="updateid">
+                        
                         <div class="form-group">
                             <label for="product_name" class="col text-left">Product Name :</label>
                             <input type="text" placeholder="Name" name="pname" id="pname" class="form-control">
@@ -96,7 +98,7 @@ if (isset($_POST['add'])) {
                 <form action="crud.php" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="deleteid" id="deleteid">
                     <div class="bg-light">
-                        <p class="text-warning  text-center p-5" style="font-size:27px;">Are you sure to delete this data ?</p>
+                        <p class="text-dark text-center p-5" style="font-size:27px;">Are you sure to delete this data ?</p>
                     </div>
                     <div class="text-right mr-5">
                         <button type="button" class="btn btn-danger w-25 mr-1" data-bs-dismiss="modal">No</button>
@@ -123,7 +125,7 @@ if (isset($_POST['add'])) {
 
 
 
-    <!-- Modal -->
+    <!-- add Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

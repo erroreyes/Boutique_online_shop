@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
                 gender varchar(20),
                 state varchar(40),
                 dob date,
-                mobile bigint,
+                mobile text,
                 image longblob
             )";
         mysqli_query($conn, $craeteTable);
@@ -67,7 +67,7 @@ if (isset($_POST['submit'])) {
         $gerr = "gender is required";
     } elseif (empty($filesize)) {
         $ierr = "image is required";
-    } elseif ($filesize > 1000000) {
+    } elseif ($filesize > 3000000) {
         $ierr = "image must be less than 1mb";
     } elseif ($present > 0) {
         $emailerr = "already exist";
@@ -97,7 +97,7 @@ if (isset($_POST['submit'])) {
 <body class="bg-light">
     <?php include "nav.php" ?>
     <div class="p-4"> </div>
-    <section class="container mt-5" data-aos="zoom-in" data-aos-duration="1000">
+    <section class="container mt-5" >
         <div class="row justify-content-center">
             <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
                 <h2 style="font-size: 48px; background-color:#f8e7e0;color:#416163;" class="text-center" id="banner">Sign Up</h2>
@@ -186,22 +186,9 @@ if (isset($_POST['submit'])) {
 
                             <div class="form-group">
                                 <label>State:</label>
-                                <div> <select name="state" style="width:70%" class="form-control">
-                                        <option value="select state" selected disabled>select state</option>
-                                        <option value="surat" <?php if (isset($_POST['state'])) {
-                                                                    if ($_POST['state'] == 'surat') {
-                                                                ?> selected <?php }
-                                                                    } ?>>Surat</option>
-                                        <option value="vadodara" <?php if (isset($_POST['state'])) {
-                                                                        if ($_POST['state'] == 'vadodara') {
-                                                                    ?>selected<?php }
-                                                                        } ?>>vadodara</option>
-                                        <option value="Ahmedabad" <?php if (isset($_POST['state'])) {
-                                                                        if ($_POST['state'] == 'ahmedabad') {
-                                                                    ?>selected<?php }
-                                                                        } ?>>Ahmedabad</option>
-                                    </select>
-                                </div>
+                                <input type="text" class="form-control" placeholder="state" name="state" value="<?php if (isset($_POST['state'])) {
+                                                                                                                            echo $state = $_POST['state'];
+                                                                                                                        } ?>">
                             </div>
                             <span><?php echo $serr; ?></span>
                         </div>

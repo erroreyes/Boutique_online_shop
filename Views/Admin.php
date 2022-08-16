@@ -2,7 +2,7 @@
 session_start();
 include "config.php";
 if (isset($_SESSION['admin'])) {
-    header("location:user_data.php");
+    header("location:dashboard.php");
 }
 $qry = "SELECT * FROM adminTbl";
 $chk = mysqli_query($conn, $qry);
@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
     } else{
         $_SESSION['admin'] = $admindata['adminid'];
         setcookie('admin',$_SESSION['admin'],time()+900);
-         header("location:user_data.php");
+         header("location:dashboard.php");
     }
 }
 ?>
@@ -91,7 +91,7 @@ if (isset($_POST['submit'])) {
 <body class="bg">
     <?php include "nav.php" ?>
     <div class="p-5"></div>
-    <section class="container" data-aos="zoom-in" data-aos-duration="1000">
+    <section class="container">
         <div class="row justify-content-center">
             <div class=" col-lg-7 col-md-10 col-sm-10 col-xs-12">
                 <h1 style="font-size: 50px; background-color:#f8e7e0;color:#416163;margin-top:0;" class="text-center banner">Admin</h1>
