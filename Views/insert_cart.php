@@ -19,12 +19,23 @@ if (isset($_POST["adding_cart"])) {
 }
 
 }
+if (isset($_POST['Mod_Quantity'])) {
+    foreach($_SESSION['cart'] as $key => $value){
+        if ($value['proname']==$_POST['name']) {
+            $_SESSION['cart'][$key]['quantity']=$_POST['Mod_Quantity'];
+            echo "<script>
+                window.location.href='cart.php';
+                </script>";
+        }
+    }
+}
 else
 {
     header("location:User.php");
 }
  
+
 // buy product
-if (isset($_POST["buy"])) {
-    header("location:ord_form.php");
-}
+// if (isset($_POST["buy"])) {
+//     header("location:ord_form.php");
+// }
