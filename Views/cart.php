@@ -102,9 +102,6 @@ if (isset($_POST['purchase'])) {
                                     $total += $subtotal;
                                     echo "
                             <tr>
-                            <form action='insert_cart.php' method='POST'>
-                                    <input onchange='this.form.submit()' name='Mod_Quantity'>
-                            </form>
                             <form method='POST'>
                                     <td> <input type='hidden' name='name' value='$value[proname]'>$value[proname]</td>
                                     <td> <input type='hidden' class='price' name='price' value='$value[price]'>$value[price]</td>

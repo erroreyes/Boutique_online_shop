@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
     if (mysqli_num_rows($qrychk) > 0) {
         $_SESSION['email'] = $row['email'];
         $_SESSION['password'] = $row['pwd'];
-        header('location:home.php');
+        header('location:http://localhost/boutique_shopping/Views/#shop');
     } else {
         echo "invalid";
     }

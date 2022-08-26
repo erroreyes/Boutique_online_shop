@@ -34,6 +34,7 @@
       <div class="collapse navbar-collapse justify-content-end" id=" navbarNav">
         <ul class="navbar-nav ml-5  mb-2 mb-lg-0">
           <li><a href="home.php">Home</a></li>
+          <li><a href="#shop">Shop</a></li>
           <li><a href="about.php">About</a></li>
           <li><a href="contact.php">Contact</a></li>
           <li><a href="signUp.php">Sign Up</a></li>

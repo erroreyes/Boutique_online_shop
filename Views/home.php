@@ -94,7 +94,7 @@ $qrychk = mysqli_query($conn, $qry);
     include "nav.php";
     ?>
     <div class="bgimg" data-aos="zoom-in" data-aos-duration="1500">
-        <div class="container headtext" data-aos="fade-right" data-aos-duration="1000">
+        <div class="container headtext p-5" data-aos="fade-right" data-aos-duration="1000">
             <h1>Our <br> Collection</h1>
             <hr class="bg-white w-25" style="height:2px;margin-right:20%;">
         </div>
@@ -167,7 +167,7 @@ $qrychk = mysqli_query($conn, $qry);
         </div>
         <!-- -------------------   SHOPING PART --------------- -->
 
-        <div class="bestselling">
+        <div class="bestselling" id="shop">
             <div class="container text-center">
                 <h1 data-aos="zoom-in" data-aos-duration="1500">Best sellers</h1>
                 <hr class="mb-3" data-aos="zoom-in" data-aos-duration="1500">
@@ -175,7 +175,7 @@ $qrychk = mysqli_query($conn, $qry);
                 <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p> -->
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
+                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="fade-right" data-aos-duration="1500">
                         <form action="insert_cart.php" method="POST">
                             <div class="card border-0">
                                 <img src="../img/w3.webp" class="card-img img-fluid">
@@ -197,7 +197,7 @@ $qrychk = mysqli_query($conn, $qry);
                             </div>
                         </form>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
+                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="fade-right" data-aos-duration="1500">
                         <form action="insert_cart.php" method="POST">
 
                             <div class="card border-0">
@@ -219,7 +219,7 @@ $qrychk = mysqli_query($conn, $qry);
                             </div>
                         </form>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
+                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="fade-right" data-aos-duration="1500">
                         <form action="insert_cart.php" method="POST">
                             <div class="card border-0">
                                 <img src="../img/w1.webp" class="card-img img-fluid">
@@ -240,7 +240,7 @@ $qrychk = mysqli_query($conn, $qry);
                             </div>
                         </form>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
+                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="fade-right" data-aos-duration="1500">
                         <form method="POST">
                             <div class="card border-0">
                                 <img src="../img/w7.webp" class="card-img img-fluid">
@@ -265,8 +265,8 @@ $qrychk = mysqli_query($conn, $qry);
 
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
-                        <form method="POST">
+                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="fade-left" data-aos-duration="1500">
+                        <form method="POST" action="insert_cart.php">
                             <div class="card border-0">
                                 <img src="../img/w4.webp" class="card-img img-fluid">
                                 <div class="label new">New</div>
@@ -286,7 +286,7 @@ $qrychk = mysqli_query($conn, $qry);
                             </div>
                         </form>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
+                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="fade-left" data-aos-duration="1500">
                         <form method="POST">
                             <div class="card border-0">
                                 <img src="../img/w9.webp" class="card-img img-fluid">
@@ -307,7 +307,7 @@ $qrychk = mysqli_query($conn, $qry);
                             </div>
                         </form>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
+                    <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block m-auto" data-aos="fade-left" data-aos-duration="1500">
                         <form method="POST">
                             <div class="card border-0">
                                 <img src="../img/w11.webp" class="card-img img-fluid">
@@ -331,7 +331,7 @@ $qrychk = mysqli_query($conn, $qry);
                     <?php
                     while ($row = mysqli_fetch_assoc($qrychk)) {
                     ?>
-                        <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block" data-aos="zoom-in" data-aos-duration="1500">
+                        <div class="col-lg-3 col-md-3 col-sm-10 col-12 d-block" data-aos="fade-left" data-aos-duration="1500">
                             <form action="insert_cart.php" method="POST">
                                 <div class="card border-0">
                                     <img src="<?php echo $row['pimage']; ?>" class="card-img">
@@ -389,7 +389,7 @@ $qrychk = mysqli_query($conn, $qry);
                         <h1 data-aos="zoom-in" data-aos-duration="1500">Jacket</h1>
                         <hr>
                         <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto" data-aos="fade-right" data-aos-duration="1500">
                                 <form method="POST">
                                     <div class="card border-0">
                                         <img src="../img/j2.webp" class="card-img img-fluid">
@@ -406,7 +406,7 @@ $qrychk = mysqli_query($conn, $qry);
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto" data-aos="fade-right" data-aos-duration="1500">
                                 <form method="POST">
                                     <div class="card border-0">
                                         <img src="../img/i6.jpg" class="card-img img-fluid">
@@ -423,7 +423,7 @@ $qrychk = mysqli_query($conn, $qry);
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto" data-aos="fade-left" data-aos-duration="1500">
                                 <form method="POST">
                                     <div class="card border-0">
                                         <img src="../img/j4.jpg" class="card-img img-fluid">
@@ -440,7 +440,7 @@ $qrychk = mysqli_query($conn, $qry);
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto" data-aos="zoom-in" data-aos-duration="1500">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-10 d-block m-auto" data-aos="fade-left" data-aos-duration="1500">
                                 <form method="POST">
                                     <div class="card border-0">
                                         <img src="../img/j5.jpg" class="card-img img-fluid">

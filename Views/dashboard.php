@@ -33,13 +33,11 @@ if (!$_SESSION['admin']) {
             <div class="col-3 p-5" style="margin-left:-15%;">
                 <a href="user_data.php" style="text-decoration:none;">
                     <h4 class="text-dark  p-4  text-center " style="border-radius:10px;background-color:lightpink;"> User
-                <hr> (50)</h3>
                 </a>
             </div>
             <div class="col-3 p-5" style="margin-left:-3%;">
                 <a href="product.php" style="text-decoration:none;">
-                    <h4 class="text-dark p-4  text-center " style="border-radius:10px;background-color:lightpink;">Product <hr>(100)
-                </h3>
+                    <h4 class="text-dark p-4  text-center " style="border-radius:10px;background-color:lightpink;">Product 
                 </a>
             </div>
         </div>

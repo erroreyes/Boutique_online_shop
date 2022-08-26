@@ -58,7 +58,6 @@ if (isset($_POST['add'])) {
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Edit Product</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form action="crud.php" method="POST" enctype="multipart/form-data" >
@@ -96,9 +95,9 @@ if (isset($_POST['add'])) {
 
                 <!-- <div class="modal-body"> -->
                 <form action="crud.php" method="POST" enctype="multipart/form-data">
-                    <input type="hidden" name="deleteid" id="deleteid">
+                    <input type="hidden">
                     <div class="bg-light">
-                        <p class="text-dark text-center p-5" style="font-size:27px;">Are you sure to delete this data ?</p>
+                        <p class="text-dark  text-center p-5" style="font-size:27px;">Are you sure to delete id =<input type="text" name="deleteid" id="deleteid" class="border-0 text-center bg-light text-dark" style="width:5%;font-size:27px;"> ?</p>
                     </div>
                     <div class="text-right mr-5">
                         <button type="button" class="btn btn-danger w-25 mr-1" data-bs-dismiss="modal">No</button>
@@ -131,7 +130,6 @@ if (isset($_POST['add'])) {
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form method="POST" enctype="multipart/form-data">

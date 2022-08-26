@@ -38,11 +38,11 @@
                     <a href="#"><img src="../img/logo1.png" width="200px"></a>
                 </h2>
                 <div class="list-group list-group-flush my-3">
-                    <a href="dashboard.php" class="list-group-item text-center  bg-transparent second-text fw-bold">DASHBOARD</a>
+                    <!-- <a href="dashboard.php" class="list-group-item text-center  bg-transparent second-text fw-bold">DASHBOARD</a> -->
                     <a href="home.php" class="list-group-item bg-transparent second-text fw-bold text-center  ">HOME</a>
                     <a href="user_data.php" class="list-group-item  text-center bg-transparent second-text fw-bold">USER</a>
                     <a href="product.php" class="list-group-item  text-center bg-transparent second-text fw-bold">PRODUCT</a>
-                    <a href="user_order.php" class="list-group-item text-center  bg-transparent second-text fw-bold">USER ORDER</a>
+                    <!-- <a href="user_order.php" class="list-group-item text-center  bg-transparent second-text fw-bold">USER ORDER</a> -->
                     <a href="admin_logout.php" class="list-group-item text-center  bg-transparent second-text fw-bold">LOGOUT</a>
 
                 </div>
